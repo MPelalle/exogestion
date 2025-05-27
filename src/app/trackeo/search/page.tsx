@@ -38,8 +38,12 @@ export default function BuscarProyecto() {
 
       const data = await res.json()
       setProject(data)
-    } catch (e: string | boolean | any) {
-      setError(e.message)
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+    setError(err.message)
+  } else {
+    setError('Ocurrió un error desconocido')
+  }
     } finally {
       setLoading(false)
     }

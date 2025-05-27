@@ -3,7 +3,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -174,4 +174,4 @@ const page = () => {
     );
     };
 
-export default page
+export default Page

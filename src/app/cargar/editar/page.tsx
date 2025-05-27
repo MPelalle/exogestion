@@ -31,8 +31,12 @@ export default function EditarProyecto() {
       setMensaje('✅ Proyecto actualizado con éxito')
       setCode('')
       setNewStatus('')
-    } catch (err: string | boolean | any) {
-      setError(err.message)
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+    setError(err.message)
+  } else {
+    setError('Ocurrió un error desconocido')
+  }
     } finally {
       setLoading(false)
     }

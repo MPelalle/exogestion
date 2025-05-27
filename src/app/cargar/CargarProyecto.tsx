@@ -46,10 +46,12 @@ export default function CargarProyecto() {
         status: '',
         code: '',
       })
-    } catch (err: string | boolean | any) {
-      setError(err.message)
-    } finally {
-      setLoading(false)
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+    setError(err.message)
+  } else {
+    setError('Ocurrió un error desconocido')
+  }
     }
   }
 

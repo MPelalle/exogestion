@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, {  useState } from 'react';
 
 
-const page = () => {
+const Page = () => {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -203,4 +203,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

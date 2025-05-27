@@ -6,7 +6,6 @@ const options = {};
 
 // Extendemos el tipo global para agregar nuestro cliente
 declare global {
-  // Solo redefinimos esto en desarrollo para evitar conflictos en hot reload
   var _mongoClientPromise: Promise<MongoClient> | undefined;
 }
 

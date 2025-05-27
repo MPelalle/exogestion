@@ -45,7 +45,7 @@ const AnimatedButton = ({ label, option, onHover, onLeave }: ButtonProps) => {
 };
 
 
-const page = () => {
+const Page = () => {
   const [bgClass, setBgClass] = useState('');
 
   const handleMouseEnter = (option: string) => {
@@ -130,4 +130,4 @@ https://wa.me/5491123456789?text=%C2%A1Hola!%20%F0%9F%91%8B%20Me%20gustar%C3%ADa
   );
 };
 
-export default page;
+export default Page;

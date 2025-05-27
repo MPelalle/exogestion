@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export  const PhrasesChange = () => {
-    const phrases = [
+ const phrases = [
         '🔒 Pago seguro',
         '🤝 Soporte real',
         '🌟 Transformamos ideas en resultados',
         '🔥 Dale vida a tu proyecto hoy'
     ];
 
+export  const PhrasesChange: React.FC = () => {
     const [phraseIndex, setPhraseIndex] = useState(0);
 
     const changePhrase = () => {
@@ -20,8 +20,11 @@ export  const PhrasesChange = () => {
     }, []);
 
     return (
-        <h1 className="font-montserrat font-extrabold text-[18px] text-center py-[20px] bg-gradient-to-r from-[#00D084] via-[#0ECFBC] to-[#0A1128] text-transparent bg-clip-text drop-shadow-md transition-all duration-500 ease-in-out">
-    {phrases[phraseIndex]}
+      <h1
+  aria-live="polite"
+  className="font-montserrat font-extrabold text-[18px] text-center py-[20px] bg-gradient-to-r from-[#00D084] via-[#0ECFBC] to-[#0A1128] text-transparent bg-clip-text drop-shadow-md transition-all duration-500 ease-in-out"
+>
+  {phrases[phraseIndex]}
 </h1>
 
     );

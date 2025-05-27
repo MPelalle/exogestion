@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 
 
-const page = () => {
+const Page = () => {
     const [form, setForm] = useState({ name: '', email: '', message: '' })
     const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
@@ -171,4 +171,4 @@ const MessagePre = ({ selectedMessages , handleAddMessage }: MessagePreProps) =>
     )
 }
 
-export default page
+export default Page
