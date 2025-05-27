@@ -46,7 +46,7 @@ export async function GET(
 // PATCH - Actualizar proyecto por código
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { code?: string } }
+  { params }: { params: { code: string } }
 ) {
   const code = params.code
 
