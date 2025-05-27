@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import {NextResponse, NextRequest} from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
 export async function POST(req: NextRequest) {
     const body = await req.json();
@@ -27,13 +27,10 @@ export async function POST(req: NextRequest) {
                     <p><strong>CV:</strong> ${cv}</p>
                     <p><strong>GitHub:</strong> ${github}</p>
                     <p><strong>Linkedin:</strong> ${linkedin}</p>`,
-                    
-
-
-        })
+        });
         return NextResponse.json({ success: true }, { status: 200 });
 
-        } catch (error) {
+    } catch (_error) {
         return NextResponse.json({ error: 'Error al enviar email' }, { status: 500 });
-        }
     }
+}

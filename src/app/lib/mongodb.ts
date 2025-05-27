@@ -6,7 +6,9 @@ const options = {};
 
 // Extendemos el tipo global para agregar nuestro cliente
 declare global {
+  /* eslint-disable no-var */
   var _mongoClientPromise: Promise<MongoClient> | undefined;
+  /* eslint-enable no-var */
 }
 
 let client: MongoClient;
