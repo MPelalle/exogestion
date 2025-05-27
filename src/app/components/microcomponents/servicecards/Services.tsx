@@ -22,7 +22,7 @@ const Services = () => {
                 "Diseño UI/UX profesional"
         ],
             tech: "🔧 Tecnologías utilizadas: React, Tailwind, Node.js/Express (o Firebase), MongoDB si hace falta.",
-            link: 'https://acortar.link/cACgsL'
+            link: 'https://acortar.link/xWWehF'
         },
         {
             title: "Tienda Online",
@@ -40,7 +40,7 @@ const Services = () => {
                 "Formularios avanzados y validaciones",
             ],
             tech: "🔧 Stack flexible",
-            link: 'https://acortar.link/9ypYyh'
+            link: 'https://acortar.link/au2uAl'
         },
         {
             title: "Pagina Dinamica",
@@ -58,7 +58,7 @@ const Services = () => {
                 "Preparado para futura expansión mobile (PWA o app nativa)"
             ],
             tech: "🔧 Stack flexible",
-            link:'https://acortar.link/K3fJrJ'
+            link:'https://acortar.link/0l67Nc'
         }
     ]
 

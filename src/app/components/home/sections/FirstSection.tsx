@@ -49,7 +49,7 @@ const [activeTitle, setActiveTitle] = useState(0);
                     text-[#000000]
                     font-montserrat
                     font-bold
-                    text-xl
+                    text-md
                     py-2
                     px-4
                     rounded
@@ -68,7 +68,7 @@ const [activeTitle, setActiveTitle] = useState(0);
                     text-[#000000]
                     font-montserrat
                     font-bold
-                    text-xl
+                    text-md
                     py-2
                     px-4
                     rounded
