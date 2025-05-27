@@ -45,7 +45,7 @@ const Page = () => {
     handleAddMessage: (msg: string) => void
   }
 
-  const MessagePre = ({ selectedMessages, handleAddMessage }: MessagePreProps) => {
+  const MessagePre = ({ handleAddMessage }: MessagePreProps) => {
     const Messages = {
       Comercial: [
         'Solicito cotización de un sitio web',
