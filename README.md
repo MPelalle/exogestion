@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 EXOGESTION — Digital Management Platform
 
-## Getting Started
+**Exogestion** es una plataforma digital creada para posicionar a una agencia de desarrollo con una presencia web moderna, eficaz y profesional. 
 
-First, run the development server:
+Diseñada para captar clientes, gestionar contactos y transmitir solidez de marca, esta app combina diseño, tecnología y rendimiento al máximo nivel. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Cada línea de código, cada transición y cada componente están pensados para ofrecer **calidad**, **eficiencia** y **experiencia de usuario real**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧠 ¿Qué hace especial a Exogestion?
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🔥 **App de trackeo propia**, para que el cliente tenga acceso las 24 horas del proyecto y su evolución.
+- 🎨 **Branding completo** hecho a medida, cuidando cada detalle visual para lograr coherencia, estética y profesionalismo.
+- 🚀 **Resultados excepcionales en Lighthouse**: performance, SEO, accesibilidad y buenas prácticas optimizadas al 100%.
+- 🌐 **Arquitectura moderna con Next.js** y su sistema de **App Router**, aprovechando la potencia de su API integrada.
+- 📩 **Formulario de contacto funcional** con envío real de mails vía **Nodemailer**.
+- 📱 **Diseño responsive**, con navegación fluida y elementos interactivos mediante **SwiperJS**.
+- ⚙️ Código profesional con **TypeScript**, **ESLint** y una estructura modular escalable.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠 Tecnologías utilizadas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js 13+ (App Router)**
+- **TypeScript**
+- **Tailwind CSS**
+- **SwiperJS**
+- **Nodemailer**
+- **ESLint**
+- **Lighthouse Audit Optimization**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🔗 Demo en vivo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[https://exogestion.vercel.app](https://exogestion.vercel.app)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📸 Vista previa
+
+Algunas capturas de pantalla que muestran la interfaz y funcionalidades principales de Exogestion:
+
+![Home de página](./screenshots/home.png)
+![Home de página versión mobile](./screenshots/home-mobile.png)
+![Trackeo](./screenshots/track.png)
+![Contacto](./screenshots/contact.png)
+![Servicio de lighthouse](./screenshots/lighthouse.png)
