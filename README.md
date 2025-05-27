@@ -47,3 +47,8 @@ Algunas capturas de pantalla que muestran la interfaz y funcionalidades principa
 ![Trackeo](./screenshots/track.png)
 ![Contacto](./screenshots/contact.png)
 ![Servicio de lighthouse](./screenshots/lighthouse.png)
+
+
+## 📬 Contacto
+
+Si querés saber más o tenés alguna consulta, podés escribirme a: [moisespelalle@gmail.com](mailto:moisespelalle@gmail.com)
