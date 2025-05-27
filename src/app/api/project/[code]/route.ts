@@ -4,7 +4,7 @@ import clientPromise from '../../../lib/mongodb'
 // GET - Buscar proyecto por código
 export async function GET(
   _req: NextRequest,
-  { params }: { params: { code?: string } }
+ { params }: { params: { code: string } }
 ) {
   const code = params.code
 
