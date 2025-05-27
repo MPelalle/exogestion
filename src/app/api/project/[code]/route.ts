@@ -1,12 +1,13 @@
 import { NextRequest } from 'next/server'
 import clientPromise from '../../../lib/mongodb'
 
-// GET - Buscar proyecto por código
-export async function GET(
-  _req: NextRequest,
-  context: { params: Record<string, string> }
-) {
-  const { code } = context.params;
+export async function GET(req: NextRequest) {
+  // req.nextUrl.pathname = '/api/project/<code>'
+  // extraer el código del path
+  const pathname = req.nextUrl.pathname
+  const segments = pathname.split('/') // ['', 'api', 'project', 'codigo']
+
+  const code = segments[segments.length - 1]
 
   if (!code) {
     return new Response(JSON.stringify({ error: 'Código no provisto' }), {
@@ -16,12 +17,10 @@ export async function GET(
   }
 
   try {
-    const client = await clientPromise;
-    const db = client.db('trackeoDB');
-    console.log('Buscando proyecto con code:', code);
+    const client = await clientPromise
+    const db = client.db('trackeoDB')
 
-    const project = await db.collection('projects').findOne({ code });
-    console.log('Resultado:', project);
+    const project = await db.collection('projects').findOne({ code })
 
     if (!project) {
       return new Response(JSON.stringify({ error: 'Proyecto no encontrado' }), {
@@ -35,56 +34,54 @@ export async function GET(
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
-    console.error('Error en GET /api/project/[code]:', error);
+    console.error('Error en GET /api/project/[code]:', error)
     return new Response(JSON.stringify({ error: 'Error en el servidor' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
   }
 }
-
-// PATCH - Actualizar proyecto por código
-export async function PATCH(
-  _req: NextRequest,
-  context: { params: Record<string, string> }
-) {
-  const { code } = context.params;
+export async function PATCH(req: NextRequest) {
+  const pathname = req.nextUrl.pathname
+  const segments = pathname.split('/')
+  const code = segments[segments.length - 1]
 
   if (!code) {
     return new Response(JSON.stringify({ error: 'Código no provisto' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
-    });
+    })
   }
 
   try {
-    const client = await clientPromise;
-    const db = client.db('trackeoDB');
+    const client = await clientPromise
+    const db = client.db('trackeoDB')
 
-    const body = await _req.json();
-    const updateData = { ...body };
+    const body = await req.json()
+    const updateData = { ...body }
 
     const result = await db.collection('projects').updateOne(
       { code },
       { $set: updateData }
-    );
+    )
 
     if (result.matchedCount === 0) {
       return new Response(JSON.stringify({ error: 'Proyecto no encontrado' }), {
         status: 404,
         headers: { 'Content-Type': 'application/json' },
-      });
+      })
     }
 
     return new Response(JSON.stringify({ message: 'Proyecto actualizado' }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
-    });
+    })
   } catch (error) {
-    console.error('Error en PATCH /api/project/[code]:', error);
+    console.error('Error en PATCH /api/project/[code]:', error)
     return new Response(JSON.stringify({ error: 'Error en el servidor' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
-    });
+    })
   }
 }
+
