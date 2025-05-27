@@ -1,9 +1,10 @@
+import Image from "next/image"
 
 
 const ThirdSection = () => {
     return (
     <div className="bg-[#050814] px-4 lg:px-32 py-12 bg-cover bg-center"
-    style={{ backgroundImage: "url('./images/second-section/bg-third-section.webp')" }}>
+    style={{ backgroundImage: "url('/images/second-section/bg-third-section.webp')" }}>
   <h2 className="font-montserrat font-bold text-lg text-[#00D084] mb-10">¿QUÉ ES LO QUE HACEMOS?</h2>
   <div className="flex flex-col lg:flex-row items-start gap-8 mb-16">
     <div className="flex-1">
@@ -14,11 +15,12 @@ const ThirdSection = () => {
       </p>
     </div>
     <div className="flex justify-center lg:justify-end flex-1">
-      <img
-        src="./images/third-section/programadores.webp"
-        alt="Imagenes de programadores"
+      <Image
+        src="/images/third-section/programadores.webp"
+        alt="Programadores"
+        width='500'
+        height='500'
         className="w-[300px] lg:w-[500px] shadow-lg rounded"
-        loading="lazy"
       />
     </div>
   </div>
@@ -32,11 +34,12 @@ const ThirdSection = () => {
       </p>
     </div>
     <div className="flex justify-center lg:justify-start flex-1">
-      <img
-        src="./images/third-section/codigo.webp"
-        alt="Imagenes de programadores"
+      <Image
+        src="/images/third-section/codigo.webp"
+        alt="Programadores"
+        width='500'
+        height='500'
         className="w-[300px] lg:w-[500px] shadow-lg rounded"
-        loading="lazy"
       />
     </div>
   </div>
@@ -50,11 +53,12 @@ const ThirdSection = () => {
       </p>
     </div>
     <div className="flex justify-center lg:justify-end flex-1">
-      <img
-        src="./images/third-section/deal.webp"
-        alt="Imagenes de programadores"
+      <Image
+        src="/images/third-section/deal.webp"
+        alt="Programadores"
+        width='500'
+        height='500'
         className="w-[300px] lg:w-[500px] shadow-lg rounded"
-        loading="lazy"
       />
     </div>
   </div>
@@ -68,11 +72,9 @@ const ThirdSection = () => {
       </p>
     </div>
     <div className="flex justify-center lg:justify-start flex-1">
-      <img
-        src="./images/third-section/hire.webp"
-        alt="Imagenes de programadores"
+      <image
+        href="/images/third-section/hire.webp"
         className="w-[300px] lg:w-[500px] shadow-lg rounded"
-        loading="lazy"
       />
     </div>
   </div>

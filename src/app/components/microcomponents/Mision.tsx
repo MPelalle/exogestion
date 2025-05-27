@@ -4,11 +4,11 @@ import Link from "next/link"
 const Mision = () => {
   return (
     <div className="flex flex-col gap-8 px-6 py-12 lg:px-24 bg-[#f5f5f5]"
-    style={{ backgroundImage: "url('./images/fondo-home/bg-mision.webp')" }}>
+    style={{ backgroundImage: "url('/images/fondo-home/bg-mision.webp')" }}>
   {/* COMPROMISO */}
   <div
     className="bg-cover bg-center rounded-xl p-10 lg:p-16 flex flex-col justify-center items-center text-center text-white shadow-md"
-    style={{ backgroundImage: "url('./images/second-section/bg-mision.webp')" }}
+    style={{ backgroundImage: "url('/images/second-section/bg-mision.webp')" }}
   >
     <h2 className="text-sm tracking-widest font-semibold uppercase mb-2">Nuestro compromiso</h2>
     <h1 className="text-3xl lg:text-5xl font-bold mb-4 leading-tight">

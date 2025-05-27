@@ -1,5 +1,5 @@
 'use client'
-import { faAtom, faChartLine, faCodeBranch, faHandSpock, faLock, faMobile, faRetweet, faSearch, faSitemap, faTools, faUniversalAccess, faWalking, faWrench } from "@fortawesome/free-solid-svg-icons"
+import { faAtom, faChartLine, faHandSpock, faLock, faMobile, faRetweet, faSearch, faSitemap, faTools, faUniversalAccess, faWalking, faWrench } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';

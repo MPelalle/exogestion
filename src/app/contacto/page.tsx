@@ -1,7 +1,8 @@
 
 'use client'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { PhrasesChange } from '../components/microcomponents/PhrasesChange'
+import Image from 'next/image'
 
 
 
@@ -131,7 +132,7 @@ const MessagePre = ({ selectedMessages , handleAddMessage }: MessagePreProps) =>
 
     return (
     <div className='flex flex-col justify-center items-center bg-[#F5F5F5] shadow-xl  bg-cover bg-center'
-    style={{ backgroundImage: 'url("./images/fondo-contact.webp")' }}>
+    style={{ backgroundImage: 'url("/images/fondo-contact.webp")' }}>
         <div className='flex flex-col justify-center items-center mt-[100px] pt-[50px]'>
         <h1 className='font-montserrat font-bold text-[16px] text-[#0A1128] text-center'>Estas a un paso de escoger la mejor opcion!</h1>
         <h2 className='font-montserrat font-light text-[14px] text-[#0A1128] text-center px-6 pb-[50px]'>Brading, diseño y desarrollo web, nosotros nos encargamos de todo</h2>
@@ -160,7 +161,10 @@ const MessagePre = ({ selectedMessages , handleAddMessage }: MessagePreProps) =>
         {status === 'error' && <p className="text-red-500">Ocurrió un error. Intenta de nuevo.</p>}
     </form>
     <PhrasesChange />
-    <img src="./images/second-section/sd-abs.webp" alt="Logo footer" className="w-[300px] h-[200px] shadow-lg shadow-[#000a] border-2 border-[#000a] lg:w-[800px] lg:h-[600px]" />
+    <Image src="/images/second-section/sd-abs.webp" 
+    height='200'
+    width='300'
+    alt="Logo footer" className="w-[300px] h-[200px] shadow-lg shadow-[#000a] border-2 border-[#000a] lg:w-[800px] lg:h-[600px]" />
     </div>
     </div>
     

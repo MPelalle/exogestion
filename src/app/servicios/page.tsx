@@ -10,7 +10,7 @@ const page = () => {
   return (
     <div className="bg-[#050814]">
         <div className="flex flex-col items-center justify-center pt-[100px] px-4 md:px-0"
-        style={{ backgroundImage: "url('./images/second-section/bg-services.webp')" }}>
+        style={{ backgroundImage: "url('/images/second-section/bg-services.webp')" }}>
   <h1 className="font-montserrat font-extrabold text-3xl lg:text-4xl text-[#f5f5f5] text-center mb-6 drop-shadow-md">
     Soluciones modernas para tu proyecto digital
   </h1>

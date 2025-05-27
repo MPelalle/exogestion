@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -92,10 +93,19 @@ const TenSection = () => {
     <p className="mt-2 text-[#0A1128]">
       Contáctanos hoy y trabajemos juntos en el desarrollo de un sitio web a medida que impulse tu negocio.
     </p>
-    <img src="./images/logo.webp" alt="Logo principal" className="w-20 mt-8 mx-auto" loading="lazy"/>
+    <Image
+      src="/images/logo.webp" 
+      alt="logo"
+      width='20'
+      height='20'
+      className="w-20 mt-8 mx-auto"/>
     <div className="flex flex-row justify-center items-center ">
       <Link target="_blank" href="https://www.instagram.com/exogestion.oficial/" className="flex flex-col justify-center items-center">
-        <img src="./images/redes/instagram.webp" alt="" className="w-[70px] h-[70px]" loading="lazy"/>
+        <Image
+          src="/images/redes/instagram.webp" 
+          alt="logo"
+          width='70'
+          height='70'/>
         <p className="text-[#0A1128] text-sm font-semibold">Seguinos en instagram!</p></Link>
     </div>
   </div>

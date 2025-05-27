@@ -1,7 +1,7 @@
 'use client'
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const page = () => {
     const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ const page = () => {
     }));
     }
 
-    async function handleSubmit(e: any) {
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setLoading(true);
         setMessage('');

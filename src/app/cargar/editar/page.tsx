@@ -31,7 +31,7 @@ export default function EditarProyecto() {
       setMensaje('✅ Proyecto actualizado con éxito')
       setCode('')
       setNewStatus('')
-    } catch (err: any) {
+    } catch (err: string | boolean | any) {
       setError(err.message)
     } finally {
       setLoading(false)

@@ -38,7 +38,7 @@ export default function BuscarProyecto() {
 
       const data = await res.json()
       setProject(data)
-    } catch (e: any) {
+    } catch (e: string | boolean | any) {
       setError(e.message)
     } finally {
       setLoading(false)

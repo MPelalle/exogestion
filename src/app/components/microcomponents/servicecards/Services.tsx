@@ -1,9 +1,7 @@
 import { faCheck, faGem, faGlobe, faInfinity, faShoppingCart } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { info } from "console"
-import { link } from "fs"
 import Link from "next/link"
-import { text } from "stream/consumers"
+
 
 
 const Services = () => {

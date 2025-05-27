@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faLock, faTimes, faWrench } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -20,10 +21,12 @@ const Header = () => {
       <nav className="flex items-center justify-between w-full max-w-[1280px]">
         {/* Logo */}
         <Link href="/home">
-        <img
-          src="/images/logo.webp"
-          alt="Logo principal"
-          className="w-[80px] h-[80px] rounded cursor-pointer"
+        <Image
+        src="/images/logo.webp"
+        alt="Logo"
+        width={80}  
+        height={80}  
+        className="rounded cursor-pointer"
         />
         </Link>
 
@@ -53,7 +56,7 @@ const Header = () => {
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         style={{
-          backgroundImage: 'url("./images/second-section/bg-services.webp")',
+          backgroundImage: 'url("/images/second-section/bg-services.webp")',
         }}
       >
         <Link href='/trackeo/search'onClick={() => setMenuOpen(false)}className="w-[80%] text-center py-2 text-[#f5f5f5] font-montserrat font-light text-[30px] rounded-xl hover:bg-[#00D084] hover:text-black hover:shadow-lg hover:shadow-[#00D084]/50 transition-all duration-300 ease-in-out"> <FontAwesomeIcon icon={faWrench} className="mr-2" />Trackeo en vivo</Link>

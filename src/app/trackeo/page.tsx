@@ -4,10 +4,20 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 
 export default function TrackPage() {
+
+  interface Project {
+  title: string
+  status: string
+  description: string
+  githubUrl: string
+  driveUrl: string
+}
+
   const params = useParams()
   const code = params.code
 
-  const [project, setProject] = useState(null)
+  const [project, setProject] = useState<Project | null>(null)
+
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
@@ -33,6 +43,7 @@ export default function TrackPage() {
   if (error) return <p style={{ color: 'red' }}>{error}</p>
   if (!project) return <p>No hay proyecto.</p>
 
+  
   return (
     <div>
       <h1>Proyecto: {project.title}</h1>

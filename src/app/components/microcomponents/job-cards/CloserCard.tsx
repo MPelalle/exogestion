@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import Tilt from 'react-parallax-tilt'
 
@@ -17,11 +18,11 @@ const CloserCard = () => {
     >
       <div className="w-[350px] h-[200px] relative overflow-hidden rounded-2xl shadow-lg shadow-[#FF6B00] font-montserrat">
         {/* Imagen de fondo */}
-        <img 
-          src="./images/cards/closer.webp"
-          alt="Imagen de vendedora"
+        <Image 
+          src="/images/cards/closer.webp"
+          alt="Closer"
+          fill
           className="w-full h-full object-cover"
-          loading='lazy'
         />
 
         {/* Degradado negro horizontal */}

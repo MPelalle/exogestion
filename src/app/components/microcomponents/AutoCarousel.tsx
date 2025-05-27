@@ -5,17 +5,18 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
+import Image from 'next/image';
 
 const images = [
-  './images/swiper/1.webp',
-  './images/swiper/2.webp',
-  './images/swiper/3.webp',
-  './images/swiper/4.webp',
-  './images/swiper/5.webp',
-  './images/swiper/6.webp',
-  './images/swiper/7.webp',
-  './images/swiper/8.webp',
-  './images/swiper/9.webp'
+  '/images/swiper/1.webp',
+  '/images/swiper/2.webp',
+  '/images/swiper/3.webp',
+  '/images/swiper/4.webp',
+  '/images/swiper/5.webp',
+  '/images/swiper/6.webp',
+  '/images/swiper/7.webp',
+  '/images/swiper/8.webp',
+  '/images/swiper/9.webp'
 ];
 
 export default function AutoCarousel() {
@@ -33,7 +34,11 @@ export default function AutoCarousel() {
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
-            <img src={src} alt={`Slide ${index}`} className="w-[50px] h-[50px]" />
+            <Image src={src}
+              alt={`Imagen ${index}`}
+              width={50}
+              height={50}
+              className="w-[50px] h-[50px]" />
           </SwiperSlide>
         ))}
       </Swiper>

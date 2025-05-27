@@ -1,3 +1,4 @@
+import Image from "next/image"
 
 const NinenthSection = () => {
   return (
@@ -5,11 +6,12 @@ const NinenthSection = () => {
   className="w-full min-h-[600px] bg-cover bg-center flex flex-col justify-center items-center gap-4 px-6 py-13"
   style={{ backgroundImage: "url('./images/syrah/syrah-fondo.webp')" }}
 >
-  <img
-    src="./images/syrah/syrah-logo.webp"
-    alt="Logo de app Syrah"
-    className="w-48 mb-4 drop-shadow-lg"
-    loading="lazy"
+  <Image
+    src="/images/syrah/syrah-logo.webp"
+    alt="Syrah Logo"
+    height='300'
+    width='300'
+    className="mb-4 drop-shadow-lg"
   />
   <h1 className="font-montserrat font-extrabold text-4xl text-white drop-shadow-md text-center">
     ¿Ya conocés <span className="text-yellow-400">Syrah</span>?

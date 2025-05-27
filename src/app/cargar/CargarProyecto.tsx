@@ -46,7 +46,7 @@ export default function CargarProyecto() {
         status: '',
         code: '',
       })
-    } catch (err: any) {
+    } catch (err: string | boolean | any) {
       setError(err.message)
     } finally {
       setLoading(false)

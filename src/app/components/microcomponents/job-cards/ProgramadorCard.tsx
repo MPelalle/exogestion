@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import Tilt from 'react-parallax-tilt';
 
@@ -15,11 +16,11 @@ export default function Card() {
       className="w-[350px] h-[200px] m-auto font-montserrat"
     >
       <div className="relative overflow-hidden rounded-2xl shadow-lg shadow-[#297FFF] w-full h-full">
-        <img 
-          src="./images/cards/programador.webp"
-          alt="Imagen de programador"
+        <Image 
+          src="/images/cards/programador.webp"
+          alt="Programador"
+          fill
           className="w-full h-full object-cover"
-          loading='lazy'
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
 

@@ -1,11 +1,12 @@
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Image from "next/image"
 
 const testimonios = [
   {
     nombre: "Moises Pelalle",
     cargo: "Co-founder & CTO de Exogestión",
-    imagen: "./images/cards/perfil.webp",
+    imagen: "/images/cards/perfil.webp",
     texto: [
       "Al recibirme de la universidad, descubrí algo alarmante: quienes recién empiezan en el mundo tech enfrentan una muralla, mientras que cientos de empresas y emprendedores pierden oportunidades digitales por no saber por dónde empezar.",
       "Por eso creé Exogestión: un puente entre dos mundos. Conectamos a marcas que necesitan crecer con desarrolladores que buscan experiencia real. Creamos un sistema profesional donde cada proyecto está acompañado por expertos, asegurando resultados de calidad y crecimiento para ambas partes.",
@@ -15,7 +16,7 @@ const testimonios = [
   {
     nombre: "Marco Grandon",
     cargo: "Co-founder & CEO de Exogestión",
-    imagen: "./images/cards/marco.webp",
+    imagen: "/images/cards/marco.webp",
     texto: [
       "A lo largo de mi experiencia en empresas exitosas, entendí que el crecimiento profesional muchas veces tiene un techo. Esta realidad me llevó a buscar nuevos desafíos y a capacitarme en programación, un área que no solo abre puertas en el mundo digital, sino que fomenta el pensamiento lógico, la creatividad y el aprendizaje constante.",
       "Así nació Exogestión, una iniciativa enfocada en generar oportunidades laborales para personas que, con un mínimo interés por superarse, pueden transformar su realidad. Todo, bajo un marco de confianza y transparencia como pilares fundamentales."
@@ -34,7 +35,13 @@ const Testimonio = ({ nombre , cargo, imagen, texto } : { nombre : string, cargo
       ))}
     </div>
     <div className="flex items-center mt-6">
-      <img src={imagen} alt={`Foto de ${nombre}`} className="w-16 h-16 rounded-full mr-4" loading="lazy" />
+      <Image
+  src={imagen}
+  alt="foto"
+  width="64"
+  height="64"
+  className="rounded-full mr-4"
+/>
       <h2 className="text-black text-base font-light">{nombre}, {cargo}</h2>
     </div>
     <hr className="border-gray-300 mt-6" />
