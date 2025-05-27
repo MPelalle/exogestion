@@ -4,9 +4,9 @@ import clientPromise from '../../../lib/mongodb'
 // GET - Buscar proyecto por código
 export async function GET(
   _req: NextRequest,
-  { params }: { params: { code?: string } }
+  context: { params: { code: string } }
 ) {
-  const code = params.code
+  const { code } = context.params;
 
   if (!code) {
     return new Response(JSON.stringify({ error: 'Código no provisto' }), {
@@ -45,10 +45,10 @@ export async function GET(
 
 // PATCH - Actualizar proyecto por código
 export async function PATCH(
-  req: NextRequest,
-  { params }: { params: { code: string } }
+ _req: NextRequest,
+  context: { params: { code: string } }
 ) {
-  const code = params.code
+  const { code } = context.params;
 
   if (!code) {
     return new Response(JSON.stringify({ error: 'Código no provisto' }), {
