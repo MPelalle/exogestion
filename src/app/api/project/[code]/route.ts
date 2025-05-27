@@ -4,7 +4,7 @@ import clientPromise from '../../../lib/mongodb'
 // GET - Buscar proyecto por código
 export async function GET(
   _req: NextRequest,
-  context: { params: { code: string } }
+  context: { params: Record<string, string> }
 ) {
   const { code } = context.params;
 
@@ -46,7 +46,7 @@ export async function GET(
 // PATCH - Actualizar proyecto por código
 export async function PATCH(
   _req: NextRequest,
-  context: { params: { code: string } }
+  context: { params: Record<string, string> }
 ) {
   const { code } = context.params;
 
