@@ -96,9 +96,9 @@ const TenSection = () => {
     <Image
       src="/images/logo.webp" 
       alt="logo"
-      width='20'
-      height='20'
-      className="w-20 mt-8 mx-auto"/>
+      width='100'
+      height='90'
+      className="mt-8 mx-auto"/>
     <div className="flex flex-row justify-center items-center ">
       <Link target="_blank" href="https://www.instagram.com/exogestion.oficial/" className="flex flex-col justify-center items-center">
         <Image

@@ -62,17 +62,22 @@ const Page = () => {
         }
     }
     return (
-    <div>
-        <div className='w-full h-auto bg-cover bg-center bg-no-repeat pt-[120px] pb-[50px] lg:pb-[100px]' 
-        style={{ backgroundImage: 'url("./images/cards/closer.webp")' }}>
-        <h1 className="font-montserrat font-bold text-4xl text-center text-[#00000] mb-4">
-            Postulación para Closer de ventas
-        </h1>
-        <p className="font-montserrat font-light text-lg text-center text-[#00000] max-w-xl mx-auto mb-6">
-            Si deseas postularte a una vacante de Closer de ventas, completa el formulario y nos pondremos en contacto contigo. Dependiendo la zona nos encontraremos via zoom o en nuestras oficinas!
-        </p>
-        <hr className="w-[70%] border-[#F5F5F5] mx-auto my-8" /> 
-        <p className="font-montserrat font-light text-lg text-center text-[#00000] max-w-xl mx-auto mb-4 px-4">
+   <div className='w-full h-auto bg-cover bg-center bg-no-repeat pt-[120px] pb-[50px] lg:pb-[100px] relative' 
+     style={{ backgroundImage: 'url("./images/cards/closer.webp")' }}>
+
+  {/* Fondo oscuro */}
+  <div className="absolute inset-0 bg-black opacity-60 z-[1]"></div>
+
+  {/* Contenido por encima */}
+  <div className="relative z-[2]">
+    <h1 className="font-montserrat font-bold text-4xl text-center text-white mb-4">
+      Postulación para Closer de ventas
+    </h1>
+    <p className="font-montserrat font-light text-lg text-center text-white max-w-xl mx-auto mb-6">
+      Si deseas postularte a una vacante de Closer de ventas, completa el formulario...
+    </p>
+    <hr className="w-[70%] border-white mx-auto my-8" />  
+         <p className="font-montserrat font-light text-lg text-center text-white max-w-xl mx-auto mb-4 px-4">
             ¿Ya leíste las condiciones de trabajo? En caso de que no, podés encontrarlas en el siguiente enlace:
         </p>
         <div className="flex justify-center">
@@ -86,8 +91,8 @@ const Page = () => {
 
         <form 
     onSubmit={handleSubmit} 
-    className="max-w-lg mx-auto bg-[#1e1e1e]/40 p-8 rounded-2xl shadow-lg mt-10 pb-10 "
-    >
+    className="max-w-lg mx-auto bg-[#1e1e1e]/40 p-8 rounded-2xl shadow-lg mt-10 pb-10">
+    
         <h2 className="text-2xl font-bold font-montserrat text-[#F5F5F5] mb-6 text-center">
         Formulario de postulación
     </h2>

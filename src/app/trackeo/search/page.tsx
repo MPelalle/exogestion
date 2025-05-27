@@ -50,51 +50,64 @@ export default function BuscarProyecto() {
   }
 
   return (
-    <div className='pt-[100px] flex flex-col items-center justify-center vh-screen bg-cover bg-center h-screen'
-    style={{ backgroundImage: "url('./images/second-section/bg-services.webp')" }}>
-      <h1 className='font-montserrat font-bold text-3xl text-[#F5F5F5] mb-4'>Hace un trackeo en vivo de tu proyecto!</h1>
-      <form onSubmit={buscar} className="mb-6 flex gap-2 text-[#F5F5F5]">
-        <input
-          type="text"
-          value={code}
-          onChange={e => setCode(e.target.value)}
-          placeholder="Ingrese código del proyecto"
-          className="flex-grow border rounded px-3 py-2 placeholder:text-gray-400"
-        />
-        <button type="submit" disabled={loading} className="bg-[#00D084] text-white px-4 rounded">
-          {loading ? 'Buscando...' : 'Buscar'}
-        </button>
-      </form>
+    <div
+  className="relative pt-[100px] flex flex-col items-center justify-center vh-screen bg-cover bg-center h-screen"
+  style={{ backgroundImage: "url('./images/second-section/bg-services.webp')" }}
+>
+  {/* Overlay oscuro */}
+  <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
-      {error && <p className="text-red-600 mb-4">{error}</p>}
+  {/* Contenido principal con z-10 */}
+  <div className="z-10 flex flex-col items-center justify-center w-full px-4">
+    <h1 className="font-montserrat font-bold text-3xl text-[#F5F5F5] mb-4 text-center">
+      ¡Hace un trackeo en vivo de tu proyecto!
+    </h1>
 
-      {project && (
-        <div className="bg-white p-6 rounded shadow flex flex-col items-center justify-center">
-          <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
-          <p className="mb-1 text-[#00D084] drop-shadow"><strong>Estado:</strong> {project.status}</p>
-          <p className="mb-4">{project.description}</p>
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-[#00D084] text-white px-4 py-2 rounded mr-4 shadow-lg"
-            >
-              Ver en GitHub
-            </a>
-          )}
-          {project.driveUrl && (
-            <a
-              href={project.driveUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-[#00D084] text-white px-4 py-2 rounded mr-4 mt-4 shadow-lg"
-            >
-              Ver en Google Drive
-            </a>
-          )}
-        </div>
-      )}
-    </div>
+    <form onSubmit={buscar} className="mb-6 flex flex-col sm:flex-row gap-2 text-[#F5F5F5] w-full max-w-md">
+      <input
+        type="text"
+        value={code}
+        onChange={e => setCode(e.target.value)}
+        placeholder="Ingrese código del proyecto"
+        className="flex-grow border rounded px-3 py-2 placeholder:text-gray-400"
+      />
+      <button type="submit" disabled={loading} className="bg-[#00D084] text-white px-4 rounded">
+        {loading ? 'Buscando...' : 'Buscar'}
+      </button>
+    </form>
+
+    {error && <p className="text-red-600 mb-4">{error}</p>}
+
+    {project && (
+      <div className="bg-white p-6 rounded shadow flex flex-col items-center justify-center max-w-lg w-full text-center">
+        <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
+        <p className="mb-1 text-[#00D084] drop-shadow"><strong>Estado:</strong> {project.status}</p>
+        <p className="mb-4">{project.description}</p>
+
+        {project.githubUrl && (
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="bg-[#00D084] text-white px-4 py-2 rounded mr-4 shadow-lg"
+          >
+            Ver en GitHub
+          </a>
+        )}
+        {project.driveUrl && (
+          <a
+            href={project.driveUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="bg-[#00D084] text-white px-4 py-2 rounded mr-4 mt-4 shadow-lg"
+          >
+            Ver en Google Drive
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+</div>
+
   )
 }

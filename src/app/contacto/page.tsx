@@ -125,68 +125,76 @@ const Page = () => {
 
   return (
     <div
-      className="flex flex-col justify-center items-center bg-[#F5F5F5] shadow-xl  bg-cover bg-center"
-      style={{ backgroundImage: 'url("/images/fondo-contact.webp")' }}
+  className="relative flex flex-col justify-center items-center bg-[#F5F5F5] shadow-xl bg-cover bg-center"
+  style={{ backgroundImage: 'url("/images/fondo-contact.webp")' }}
+>
+  {/* Capa oscura encima del fondo */}
+  <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+
+  {/* Contenido principal */}
+  <div className="flex flex-col justify-center items-center mt-[100px] pt-[50px] z-10">
+    <h1 className="font-montserrat font-bold text-[16px] text-[#F5F5F5] text-center">
+      ¡Estás a un paso de escoger la mejor opción!
+    </h1>
+    <h2 className="font-montserrat font-light text-[14px] text-[#F5F5F5] text-center px-6 pb-[50px]">
+      Branding, diseño y desarrollo web, ¡nosotros nos encargamos de todo!
+    </h2>
+
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-md mx-auto flex flex-col gap-4 p-4 bg-[#f5f5f5] lg:shadow-lg rounded"
     >
-      <div className="flex flex-col justify-center items-center mt-[100px] pt-[50px]">
-        <h1 className="font-montserrat font-bold text-[16px] text-[#0A1128] text-center">
-          Estas a un paso de escoger la mejor opcion!
-        </h1>
-        <h2 className="font-montserrat font-light text-[14px] text-[#0A1128] text-center px-6 pb-[50px]">
-          Brading, diseño y desarrollo web, nosotros nos encargamos de todo
-        </h2>
-        <form
-          onSubmit={handleSubmit}
-          className="max-w-md mx-auto flex flex-col gap-4 p-4 bg-[#f5f5f5] lg:shadow-lg rounded"
-        >
-          <input
-            name="name"
-            placeholder="Tu nombre"
-            onChange={handleChange}
-            value={form.name}
-            className="p-2 rounded border-b-2 color-[#0A1128] font-montserrat  placeholder:text-[#000000]"
-            required
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Tu email"
-            onChange={handleChange}
-            value={form.email}
-            className="p-2 rounded border-b-2 color-[#0A1128] font-montserrat  placeholder:text-[#000000]"
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Tu mensaje"
-            rows={5}
-            onChange={handleChange}
-            value={form.message}
-            className="p-2 rounded border-b-2 resize-none color-[#0A1128] font-montserrat placeholder:text-[#000000]"
-            required
-          />
-          <div>
-            <MessagePre selectedMessages={selectedMessages} handleAddMessage={handleAddMessage} />
-          </div>
-          <button
-            type="submit"
-            className="bg-[#00D084] text-[#000000] py-2 rounded font-bold  shadow-xl cursor-pointer"
-          >
-            {status === 'sending' ? 'Enviando...' : 'Enviar mensaje 📩'}
-          </button>
-          {status === 'success' && <p className="text-green-500">Mensaje enviado correctamente 🎉</p>}
-          {status === 'error' && <p className="text-red-500">Ocurrió un error. Intenta de nuevo.</p>}
-        </form>
-        <PhrasesChange />
-        <Image
-          src="/images/second-section/sd-abs.webp"
-          height={200}
-          width={300}
-          alt="Logo footer"
-          className="w-[300px] h-[200px] shadow-lg shadow-[#000a] border-2 border-[#000a] lg:w-[800px] lg:h-[600px]"
-        />
+      <input
+        name="name"
+        placeholder="Tu nombre"
+        onChange={handleChange}
+        value={form.name}
+        className="p-2 rounded border-b-2 color-[#0A1128] font-montserrat  placeholder:text-[#000000]"
+        required
+      />
+      <input
+        name="email"
+        type="email"
+        placeholder="Tu email"
+        onChange={handleChange}
+        value={form.email}
+        className="p-2 rounded border-b-2 color-[#0A1128] font-montserrat  placeholder:text-[#000000]"
+        required
+      />
+      <textarea
+        name="message"
+        placeholder="Tu mensaje"
+        rows={5}
+        onChange={handleChange}
+        value={form.message}
+        className="p-2 rounded border-b-2 resize-none color-[#0A1128] font-montserrat placeholder:text-[#000000]"
+        required
+      />
+      <div>
+        <MessagePre selectedMessages={selectedMessages} handleAddMessage={handleAddMessage} />
       </div>
-    </div>
+      <button
+        type="submit"
+        className="bg-[#00D084] text-[#000000] py-2 rounded font-bold shadow-xl cursor-pointer"
+      >
+        {status === 'sending' ? 'Enviando...' : 'Enviar mensaje 📩'}
+      </button>
+      {status === 'success' && <p className="text-green-500">Mensaje enviado correctamente 🎉</p>}
+      {status === 'error' && <p className="text-red-500">Ocurrió un error. Intenta de nuevo.</p>}
+    </form>
+
+    <PhrasesChange />
+
+    <Image
+      src="/images/second-section/sd-abs.webp"
+      height={1200}
+      width={1200}
+      alt="Logo footer"
+      className="w-[300px] h-[200px] shadow-lg shadow-[#000a] border-2 border-[#000a] lg:w-[800px] lg:h-[600px] mt-6 mb-6"
+    />
+  </div>
+</div>
+
   )
 }
 

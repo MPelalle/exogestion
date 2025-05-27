@@ -20,11 +20,11 @@ const [activeTitle, setActiveTitle] = useState(0);
 
     return (
     <div className='bg-[#F5F5F5]'>
-        <div className='w-full h-[800px] sm:h-[800px] lg:h-[900px] bg-cover bg-right bg-no-repeat '
+        <div className='w-full h-[800px] sm:h-[800px] lg:h-[1000px] bg-cover bg-right bg-no-repeat '
         style={{backgroundImage: 'url("./images/fondo.webp")'}}>
             
             {/* TITULOS */}
-            <div className='flex flex-col justify-start pt-[100px] lg:justify-center items-start gap-2 px-5 lg:px-[400px] pt-[50px] '>
+            <div className='flex flex-col justify-start pt-[150px] lg:justify-center items-start gap-2 px-5 lg:px-[400px] pt-[50px] '>
                 <h1 className={`font-montserrat font-bold text-5xl sm:text-6xl text-[#F5F5F5] transition-all duration-1000 ${activeTitle === 1 ? 'neon-green opacity-100' : 'opacity-30'}`}>
         Conectar,
         </h1>
@@ -49,7 +49,7 @@ const [activeTitle, setActiveTitle] = useState(0);
                     text-[#000000]
                     font-montserrat
                     font-bold
-                    text-2xl
+                    text-xl
                     py-2
                     px-4
                     rounded
@@ -68,7 +68,7 @@ const [activeTitle, setActiveTitle] = useState(0);
                     text-[#000000]
                     font-montserrat
                     font-bold
-                    text-2xl
+                    text-xl
                     py-2
                     px-4
                     rounded
