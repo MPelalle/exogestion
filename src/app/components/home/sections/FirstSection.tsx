@@ -20,8 +20,12 @@ const [activeTitle, setActiveTitle] = useState(0);
 
     return (
     <div className='bg-[#F5F5F5]'>
-        <div className='w-full h-[800px] sm:h-[800px] lg:h-[1000px] bg-cover bg-right bg-no-repeat '
-        style={{backgroundImage: 'url("./images/fondo.webp")'}}>
+        <div
+  className="w-full h-[900px] sm:h-[900px] lg:h-[1000px] bg-cover bg-right bg-no-repeat relative"
+  style={{
+    backgroundImage: 'linear-gradient(to top, #f5f5f5 0%, transparent 60%), url("./images/fondo.webp")',
+  }}
+>
             
             {/* TITULOS */}
             <div className='flex flex-col justify-start pt-[150px] lg:justify-center items-start gap-2 px-5 lg:px-[400px] pt-[50px] '>
@@ -46,7 +50,7 @@ const [activeTitle, setActiveTitle] = useState(0);
                 <Link 
                 href='/servicios' className='
                     bg-[#00D084]
-                    text-[#000000]
+                    text-[#383838]
                     font-montserrat
                     font-bold
                     text-md
@@ -59,13 +63,14 @@ const [activeTitle, setActiveTitle] = useState(0);
                     ease-in-out
                     hover:shadow-[0_0_20px_#00D084]
                     hover:scale-105
+                    text-center
                 '>Comenzar 📈</Link>
                 <a href='https://wa.me/541159567465?text=%C2%A1Hola!%20%F0%9F%91%8B%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20para%20poder%20desarrollar%20mi%20aplicaci%C3%B3n%20web%20%F0%9F%92%BB%E2%9C%A8.%20Estoy%20muy%20interesado%20y%20quisiera%20saber%20c%C3%B3mo%20puedo%20comenzar.%20%C2%A1Muchas%20gracias!%20%F0%9F%99%8C
 '
                 target='_blank' className='
                     bg-[#00D084]
                     text-center
-                    text-[#000000]
+                    text-[#383838]
                     font-montserrat
                     font-bold
                     text-md

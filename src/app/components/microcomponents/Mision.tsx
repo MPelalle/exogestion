@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Mision = () => {
   return (
-    <div className="flex flex-col gap-8 px-6 py-12 lg:px-24 bg-[#f5f5f5]"
+    <div className="flex flex-col gap-8 px-6 py-12 lg:px-24 bg-[#f5f5f5] shadow-xl"
     style={{ backgroundImage: "url('/images/fondo-home/bg-mision.webp')" }}>
   {/* COMPROMISO */}
   <div
@@ -19,7 +19,7 @@ const Mision = () => {
       y resultados concretos. Nuestra base es la excelencia y la intención detrás de cada detalle.
     </p>
     <Link href='https://wa.me/541159567465?text=%C2%A1Hola!%20%F0%9F%91%8B%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20para%20poder%20desarrollar%20mi%20aplicaci%C3%B3n%20web%20%F0%9F%92%BB%E2%9C%A8.%20Estoy%20muy%20interesado%20y%20quisiera%20saber%20c%C3%B3mo%20puedo%20comenzar.%20%C2%A1Muchas%20gracias!%20%F0%9F%99%8C
-'className="bg-[#00D084] hover:bg-[#0056b3] transition-colors duration-300 text-black px-6 py-3 rounded-lg shadow-lg">
+'className="bg-[#00D084] hover:bg-[#0056b3] hover:text-white transition-colors duration-300 text-black px-6 py-3 rounded-lg shadow-lg">
       Contactate
     </Link>
   </div>

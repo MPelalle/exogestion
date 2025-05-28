@@ -69,7 +69,7 @@ const Services = () => {
         key={i}
         className="bg-white border border-gray-200 rounded-2xl shadow-md p-6 flex flex-col justify-between hover:shadow-xl transition-shadow duration-300"
         style={{
-        boxShadow: '0 8px 10px #00D084',
+        boxShadow: '0 1px 10px #00D084',
         }}
     >
         <p className="text-center bg-[#00D084] text-black font-semibold text-sm mb-4 shadow-md">{servicio.bonus}</p>
