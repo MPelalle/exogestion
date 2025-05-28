@@ -53,7 +53,6 @@ const page = () => {
       {/* CAROUSELS & FINAL SECTION */}
       <div className="px-4 mt-16 space-y-24 pb-12">
         <InfoCarousel />
-        <AutoCarousel />
         <TenSection />
       </div>
     </div>
