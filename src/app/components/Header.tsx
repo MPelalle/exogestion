@@ -20,7 +20,7 @@ const Header = () => {
       role="banner"
     >
       <nav
-        className="max-w-[1280px] mx-auto flex items-center justify-between h-[80px] px-6 lg:px-10"
+        className="max-w-[1280px] mx-auto flex items-center justify-around h-[80px] px-6 lg:px-10"
         role="navigation"
         aria-label="Main Navigation"
       >
