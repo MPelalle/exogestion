@@ -97,7 +97,7 @@ const Header = () => {
       {/* Menú móvil deslizante desde la derecha */}
       <div
         id="mobile-menu"
-        className={`fixed top-[80px] right-0 h-[calc(100vh-80px)] w-[75vw] max-w-xs bg-[#111827] shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-[80px] right-0 h-[calc(100vh-80px)] w-[85vw] max-w-xs bg-[#111827] shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         role="menu"
@@ -135,7 +135,7 @@ const Header = () => {
               role="menuitem"
               tabIndex={isMenuOpen ? 0 : -1}
             >
-              Sumate a nuestro equipo
+              Se parte
             </Link>
           </li>
           <li>
