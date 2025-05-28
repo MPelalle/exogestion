@@ -1,6 +1,11 @@
+'use client'
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+import TypewriterComponent from "typewriter-effect";
 
 const testimonios = [
   {
@@ -49,10 +54,24 @@ const Testimonio = ({ nombre , cargo, imagen, texto } : { nombre : string, cargo
 )
 
 const EightSection = () => {
+
+    useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+  
   return (
-    <section className="py-12 px-4 pt-10 lg:pt-[10px]">
+    <section className="py-12 px-4 pt-10 lg:pt-[10px]" id="testimonios" data-aos="fade-up">
       <div className="text-center mb-12">
-        <h1 className="font-montserrat font-light text-3xl text-gray-600">Testimonios</h1>
+        <div className="font-montserrat font-light text-3xl text-gray-600">
+        <TypewriterComponent
+        options={{
+          strings: ["Testimonios"],
+          autoStart: true,
+          loop: true,
+          delay: 100
+        }}
+        />
+        </div>
         <hr className="w-24 border-black mx-auto mt-4" />
       </div>
       {testimonios.map((testimonio, idx) => (

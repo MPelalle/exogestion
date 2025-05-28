@@ -1,6 +1,9 @@
 'use client'
 
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
+
 
 interface Project {
   title: string
@@ -40,10 +43,10 @@ export default function BuscarProyecto() {
       setProject(data)
     } catch (err: unknown) {
       if (err instanceof Error) {
-    setError(err.message)
-  } else {
-    setError('Ocurrió un error desconocido')
-  }
+        setError(err.message)
+      } else {
+        setError('Ocurrió un error desconocido')
+      }
     } finally {
       setLoading(false)
     }
@@ -51,63 +54,80 @@ export default function BuscarProyecto() {
 
   return (
     <div
-  className="relative pt-[100px] flex flex-col items-center justify-center vh-screen bg-cover bg-center h-screen"
-  style={{ backgroundImage: "url('./images/second-section/bg-services.webp')" }}
->
-  {/* Overlay oscuro */}
-  <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+      className="relative pt-50 pb-10 min-h-screen bg-cover bg-center flex flex-col items-center justify-start px-4"
+      style={{ backgroundImage: "url('./images/second-section/bg-services.webp')" }}
+    >
+      {/* Overlay oscuro */}
+      <div className="absolute inset-0 bg-black/60 z-0" />
 
-  {/* Contenido principal con z-10 */}
-  <div className="z-10 flex flex-col items-center justify-center w-full px-4">
-    <h1 className="font-montserrat font-bold text-3xl text-[#F5F5F5] mb-4 text-center">
-      ¡Hace un trackeo en vivo de tu proyecto!
-    </h1>
+      {/* Contenido principal */}
+      <div className="z-10 w-full max-w-2xl flex flex-col items-center text-white">
+        <header className="bg-white/90 text-gray-800 w-full rounded-xl shadow-md p-6 mb-8 text-center">
+          <h1 className="text-3xl font-bold">Exogestión – Seguimiento</h1>
+          <p className="text-sm text-gray-600 mt-2">Rastreá el estado de tu proyecto en tiempo real</p>
+        </header>
 
-    <form onSubmit={buscar} className="mb-6 flex flex-col sm:flex-row gap-2 text-[#F5F5F5] w-full max-w-md">
-      <input
-        type="text"
-        value={code}
-        onChange={e => setCode(e.target.value)}
-        placeholder="Ingrese código del proyecto"
-        className="flex-grow border rounded px-3 py-2 placeholder:text-gray-400"
-      />
-      <button type="submit" disabled={loading} className="bg-[#00D084] text-white px-4 rounded">
-        {loading ? 'Buscando...' : 'Buscar'}
-      </button>
-    </form>
+        <h2 className="font-montserrat font-bold text-2xl sm:text-3xl text-center mb-6">
+          ¡Hacé un trackeo en vivo de tu proyecto!
+        </h2>
 
-    {error && <p className="text-red-600 mb-4">{error}</p>}
-
-    {project && (
-      <div className="bg-white p-6 rounded shadow flex flex-col items-center justify-center max-w-lg w-full text-center">
-        <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
-        <p className="mb-1 text-[#00D084] drop-shadow"><strong>Estado:</strong> {project.status}</p>
-        <p className="mb-4">{project.description}</p>
-
-        {project.githubUrl && (
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="bg-[#00D084] text-white px-4 py-2 rounded mr-4 shadow-lg"
+        <form onSubmit={buscar} className="flex flex-col sm:flex-row gap-2 w-full">
+          <div className="relative w-full">
+            <input
+              type="text"
+              value={code}
+              onChange={e => setCode(e.target.value)}
+              placeholder="Buscar por número de gestión..."
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 pr-10 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00D084] text-white text-[25px]"
+            />
+            <FontAwesomeIcon icon={faSearch} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" />
+          </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-[#00D084] hover:bg-[#00b270] transition-colors text-white px-6 py-2 rounded-lg font-semibold"
           >
-            Ver en GitHub
-          </a>
+            {loading ? 'Buscando...' : 'Buscar'}
+          </button>
+        </form>
+
+        {error && (
+          <p className="text-red-500 mt-4 text-sm font-medium text-center animate-pulse">{error}</p>
         )}
-        {project.driveUrl && (
-          <a
-            href={project.driveUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="bg-[#00D084] text-white px-4 py-2 rounded mr-4 mt-4 shadow-lg"
-          >
-            Ver en Google Drive
-          </a>
+
+        {project && (
+          <div className="bg-white/90 text-gray-800 mt-8 w-full rounded-xl p-6 shadow-lg text-center animate-fade-in">
+            <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
+            <p className="text-[#00D084] font-semibold mb-2">
+              Estado: <span className="font-normal">{project.status}</span>
+            </p>
+            <p className="text-sm mb-4">{project.description}</p>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-[#24292e] hover:bg-[#1b1f23] text-white px-4 py-2 rounded-lg transition"
+                >
+                  Ver en GitHub
+                </a>
+              )}
+              {project.driveUrl && (
+                <a
+                  href={project.driveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-[#00D084] hover:bg-[#00b270] text-white px-4 py-2 rounded-lg transition"
+                >
+                  Ver en Google Drive
+                </a>
+              )}
+            </div>
+          </div>
         )}
       </div>
-    )}
-  </div>
-</div>
-
+    </div>
   )
 }

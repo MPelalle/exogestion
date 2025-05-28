@@ -1,10 +1,20 @@
+'use client'
 import { faCheck, faGem, faGlobe, faInfinity, faShoppingCart } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 
 
 const Services = () => {
+
+  useEffect(() => {
+  AOS.init({ duration: 1000, once: true });
+}, []);
+
+
     const Servicios = [
         {
             title: "Landing Page",
@@ -66,6 +76,7 @@ const Services = () => {
     <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 py-12">
     {Servicios.map((servicio, i) => (
     <div
+        data-aos="fade-left"
         key={i}
         className="bg-white border border-gray-200 rounded-2xl shadow-md p-6 flex flex-col justify-between hover:shadow-xl transition-shadow duration-300"
         style={{

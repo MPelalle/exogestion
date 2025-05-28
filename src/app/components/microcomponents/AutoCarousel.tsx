@@ -6,6 +6,9 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 import Image from 'next/image';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const slides = [
   { image: '/images/swiper/1.webp', title: 'Base de datos optimizada' },
@@ -21,6 +24,11 @@ const slides = [
 
 
 export default function AutoCarousel() {
+
+  useEffect(() => {
+  AOS.init({ duration: 1000, once: true });
+}, []);
+
   return (
     <div className="w-full lg:w-1/2 lg:mx-auto">
       <Swiper
@@ -35,8 +43,8 @@ export default function AutoCarousel() {
       >
       {slides.map(({ image, title }, index) => (
   <SwiperSlide key={index}>
-    <div className="group relative flex flex-col items-center justify-center gap-3 p-4 bg-white/30 backdrop-blur-md rounded-2xl hover:shadow-2xl transition-all duration-300 max-w-[200px] mx-auto">
-      <div className="w-[50px] h-[50px] overflow-hidden">
+    <div className="group relative flex flex-col items-center justify-center gap-3 p-5 bg-white/10 backdrop-blur-sm rounded-2xl max-w-[200px] mx-auto" data-aos="fade">
+      <div className="w-[40px] h-[40px] overflow-hidden">
         <Image
           src={image}
           alt={`Imagen ${index}`}

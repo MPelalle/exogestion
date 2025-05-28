@@ -44,8 +44,10 @@ export default function RootLayout({
 
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F5F5F5]`}
-      >
+      style={{ overflowX: "hidden" }}
+  className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F5F5F5] overflow-x-hidden`}
+>
+
         <Header />
         {children}
         <Footer />

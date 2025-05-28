@@ -9,61 +9,158 @@ import Image from "next/image";
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
-  // Evitar scroll al abrir menú móvil
+  // Bloquear scroll cuando el menú móvil está abierto
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
   }, [isMenuOpen]);
 
   return (
     <header
-  className="bg-transparent hover:bg-[#050814] transition-colors duration-300 ease-in-out fixed top-0 left-0 w-full h-[100px] z-50 flex items-center justify-center px-4"
->
-      <nav className="flex items-center justify-between w-full max-w-[1280px]">
+      className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-40 backdrop-blur-sm"
+      role="banner"
+    >
+      <nav
+        className="max-w-[1280px] mx-auto flex items-center justify-between h-[80px] px-6 lg:px-10"
+        role="navigation"
+        aria-label="Main Navigation"
+      >
         {/* Logo */}
-        <Link href="/home">
-        <Image
-        src="/images/logo.webp"
-        alt="Logo"
-        width={80}  
-        height={80}  
-        className="rounded cursor-pointer"
-        />
+        <Link href="/home" className="flex items-center focus:outline-none focus:ring-2 focus:ring-[#00D084] rounded">
+          <Image
+            src="/images/logo.webp"
+            alt="Logo Exogestión"
+            width={70}
+            height={70}
+            className="rounded"
+            priority
+          />
+          <span className="sr-only">Exogestión - Inicio</span>
         </Link>
 
-        {/* Menú de navegación (visible solo en desktop) */}
-        <div className="hidden lg:flex gap-8 text-[#f5f5f5] font-montserrat font-light text-[14px]">
-          <Link href='/trackeo/search' className="hover:text-[#00D084] transition hover:bg-[#00D084] hover:text-white hover:px-1 hover:rounded hover:shadow-lg hover:shadow-[#00D084]/50 transition-all duration-300 ease-in-out"> <FontAwesomeIcon icon={faWrench} className="mr-2" />Trackeo en vivo</Link>
-          <Link href="/comenzar" className="hover:text-[#00D084] transition">¡Quiero mi web!</Link>
-          <Link href="/comenzar" className="hover:text-[#00D084] transition">Sumate a nuestro equipo</Link>
-          <Link href="/servicios" className="hover:text-[#00D084] transition">Servicios</Link>
-          <Link href="/contacto"className="hover:text-[#00D084] transition">Contacto</Link>
-          <Link href='/login' className="hover:text-[#00D084] transition"><FontAwesomeIcon icon={faLock} className="mr-2" />Dashboard</Link>
-        </div>
+        {/* Menú Desktop */}
+        <ul className="hidden lg:flex gap-8 text-[#e0e0e0] font-montserrat text-sm font-light select-none items-center">
+          <li>
+            <Link
+              href="/trackeo/search"
+              className="flex items-center gap-2 px-3 py-2 rounded hover:bg-[#00D084] hover:text-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D084]"
+            >
+              <FontAwesomeIcon icon={faWrench} />
+              Trackeo en vivo
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/comenzar"
+              className="px-3 py-2 rounded hover:bg-[#00D084] hover:text-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D084]"
+            >
+              ¡Quiero mi web!
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/comenzar"
+              className="px-3 py-2 rounded hover:bg-[#00D084] hover:text-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D084]"
+            >
+              Sumate a nuestro equipo
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/servicios"
+              className="px-3 py-2 rounded hover:bg-[#00D084] hover:text-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D084]"
+            >
+              Servicios
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contacto"
+              className="px-3 py-2 rounded hover:bg-[#00D084] hover:text-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D084]"
+            >
+              Contacto
+            </Link>
+          </li>
+        </ul>
 
-        {/* Ícono menú hamburguesa (solo en mobile) */}
-        <div className="lg:hidden">
-          <FontAwesomeIcon
-            icon={isMenuOpen ? faTimes : faBars}
-            className="text-white w-[30px] h-[30px] cursor-pointer"
-            onClick={() => setMenuOpen(!isMenuOpen)}
-          />
-        </div>
+        {/* Botón menú móvil */}
+        <button
+          aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMenuOpen(!isMenuOpen)}
+          className="lg:hidden p-2 text-white rounded focus:outline-none focus:ring-2 focus:ring-[#00D084]"
+        >
+          <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="lg" />
+        </button>
       </nav>
 
-      {/* Menú móvil animado (solo visible en mobile) */}
+      {/* Menú móvil deslizante desde la derecha */}
       <div
-        className={`fixed top-[100px] left-0 w-full h-[calc(100vh-160px)] bg-cover bg-center flex flex-col items-center justify-center gap-10 py-10 px-4 z-40 transition-transform duration-300 ease-in-out lg:hidden ${
-          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        id="mobile-menu"
+        className={`fixed top-[80px] right-0 h-[calc(100vh-80px)] w-[75vw] max-w-xs bg-[#111827] shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{
-          backgroundImage: 'url("/images/second-section/bg-services.webp")',
-        }}
+        role="menu"
+        aria-label="Menú móvil"
       >
-        <Link href='/trackeo/search'onClick={() => setMenuOpen(false)}className="w-[80%] text-center py-2 text-[#f5f5f5] font-montserrat font-light text-[30px] rounded-xl hover:bg-[#00D084] hover:text-black hover:shadow-lg hover:shadow-[#00D084]/50 transition-all duration-300 ease-in-out"> <FontAwesomeIcon icon={faWrench} className="mr-2" />Trackeo en vivo</Link>
-        <Link href="/comenzar" onClick={() => setMenuOpen(false)}className="w-[80%] text-center py-2 text-[#f5f5f5] font-montserrat font-light text-[30px] rounded-xl hover:bg-[#00D084] hover:text-black hover:shadow-lg hover:shadow-[#00D084]/50 transition-all duration-300 ease-in-out">Sumate a nuestro equipo</Link>
-        <Link href="/servicios" onClick={() => setMenuOpen(false)}className="w-[80%] text-center py-2 text-[#f5f5f5] font-montserrat font-light text-[30px] rounded-xl hover:bg-[#00D084] hover:text-black hover:shadow-lg hover:shadow-[#00D084]/50 transition-all duration-300 ease-in-out">Servicios</Link>
-        <Link href="/contacto" onClick={() => setMenuOpen(false)}className="w-[80%] text-center py-2 text-[#f5f5f5] font-montserrat font-light text-[30px] rounded-xl hover:bg-[#00D084] hover:text-black hover:shadow-lg hover:shadow-[#00D084]/50 transition-all duration-300 ease-in-out">Contacto</Link>
-        <Link href='/login'onClick={() => setMenuOpen(false)}className="w-[80%] text-center py-2 text-[#f5f5f5] font-montserrat font-light text-[30px] rounded-xl hover:bg-[#00D084] hover:text-black hover:shadow-lg hover:shadow-[#00D084]/50 transition-all duration-300 ease-in-out"><FontAwesomeIcon icon={faLock} className="mr-2" />Dashboard</Link>
+        <ul className="flex flex-col gap-6 p-6 text-[#e0e0e0] font-montserrat text-lg font-light select-none">
+          <li>
+            <Link
+              href="/trackeo/search"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#00D084] hover:text-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D084]"
+              role="menuitem"
+              tabIndex={isMenuOpen ? 0 : -1}
+            >
+              <FontAwesomeIcon icon={faWrench} />
+              Trackeo en vivo
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/comenzar"
+              onClick={() => setMenuOpen(false)}
+              className="px-4 py-2 rounded hover:bg-[#00D084] hover:text-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D084]"
+              role="menuitem"
+              tabIndex={isMenuOpen ? 0 : -1}
+            >
+              ¡Quiero mi web!
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/comenzar"
+              onClick={() => setMenuOpen(false)}
+              className="px-4 py-2 rounded hover:bg-[#00D084] hover:text-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D084]"
+              role="menuitem"
+              tabIndex={isMenuOpen ? 0 : -1}
+            >
+              Sumate a nuestro equipo
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/servicios"
+              onClick={() => setMenuOpen(false)}
+              className="px-4 py-2 rounded hover:bg-[#00D084] hover:text-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D084]"
+              role="menuitem"
+              tabIndex={isMenuOpen ? 0 : -1}
+            >
+              Servicios
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contacto"
+              onClick={() => setMenuOpen(false)}
+              className="px-4 py-2 rounded hover:bg-[#00D084] hover:text-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D084]"
+              role="menuitem"
+              tabIndex={isMenuOpen ? 0 : -1}
+            >
+              Contacto
+            </Link>
+          </li>
+        </ul>
       </div>
     </header>
   );

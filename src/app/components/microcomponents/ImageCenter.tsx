@@ -1,13 +1,23 @@
+'use client'
 import Image from "next/image"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 
 const ImageCenter = () => {
+
+  useEffect(() => {
+  AOS.init({ duration: 1000, once: true });
+}, []);
+
   return (
     <div className='bg-[#F5F5F5]'>
   <div className='relative bg-[#F5F5F5]'>
     <Image 
       src="/images/second-section/sd-abs.webp" 
       alt="Imagen de fondo" 
+      data-aos="fade-up"
       height={1200}
       width={1200}
       className='

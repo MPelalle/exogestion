@@ -13,10 +13,12 @@ import Mision from "./components/microcomponents/Mision";
 import Services from "./components/microcomponents/servicecards/Services";
 import MidServicios from "./components/servicios/MidServicios";
 
+
+
 export default function Home() {
   return (
      <>
-    <div className="bg-[#f5f5f5]">
+    <div className="bg-[#f5f5f5] overflow-x-hidden">
         <FirstSection/>
         <ImageCenter />
         <SecondSection />

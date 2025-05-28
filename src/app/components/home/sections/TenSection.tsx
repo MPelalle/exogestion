@@ -7,6 +7,7 @@ import { useState } from "react";
 
 
 const TenSection = () => {
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -82,7 +83,7 @@ const TenSection = () => {
     </div>
 
   {/* TEXTO DESCRIPTIVO */}
-  <div className="flex flex-col w-full lg:w-1/2 text-center lg:text-right" >
+  <div className="flex flex-col w-full lg:w-1/2 text-center lg:text-right">
     <p className="text-[#000000] font-medium text-sm">Contactanos</p>
     <h1 className="text-3xl font-bold text-[#0A1128]">
       ¡Hablemos de tu próximo <span className="text-[#00D084] drop-shadow-xl">proyecto</span>!

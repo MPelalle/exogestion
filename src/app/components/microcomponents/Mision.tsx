@@ -1,4 +1,8 @@
+'use client'
 import Link from "next/link"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 
 const Mision = () => {
@@ -9,6 +13,7 @@ const Mision = () => {
   <div
     className="bg-cover bg-center rounded-xl p-10 lg:p-16 flex flex-col justify-center items-center text-center text-white shadow-md"
     style={{ backgroundImage: "url('/images/second-section/bg-mision.webp')" }}
+    data-aos='fade-up'
   >
     <h2 className="text-sm tracking-widest font-semibold uppercase mb-2">Nuestro compromiso</h2>
     <h1 className="text-3xl lg:text-5xl font-bold mb-4 leading-tight">
@@ -27,7 +32,7 @@ const Mision = () => {
   {/* VISIÓN Y MISIÓN */}
   <div className="flex flex-col lg:flex-row gap-6">
     {/* VISIÓN */}
-    <div className="flex-1 bg-[#f5f5f5] rounded-xl p-6 lg:p-10 shadow-sm text-[#000000]">
+    <div className="flex-1 bg-[#f5f5f5] rounded-xl p-6 lg:p-10 shadow-sm text-[#000000]" data-aos='fade-right'>
       <p className="text-[#000000] font-medium text-sm mb-2">🌍 Nuestra Visión</p>
       <h1 className="text-2xl lg:text-3xl font-semibold mb-4">
         Impulsar marcas con presencia digital poderosa
@@ -39,7 +44,7 @@ const Mision = () => {
     </div>
 
     {/* MISIÓN */}
-    <div className="flex-1 bg-[#f5f5f5] rounded-xl p-6 lg:p-10 shadow-sm text-[#0A1128]">
+    <div className="flex-1 bg-[#f5f5f5] rounded-xl p-6 lg:p-10 shadow-sm text-[#0A1128]" data-aos='fade-left'>
       <p className="text-[#000000] font-medium text-sm mb-2">🎯 Nuestra Misión</p>
       <h1 className="text-2xl lg:text-3xl font-semibold mb-4">
         Transformar ideas en experiencias digitales de alto valor
