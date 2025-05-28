@@ -17,7 +17,7 @@ import MidServicios from "../components/servicios/MidServicios"
 const page = () => {
   return (
     <>
-    <div className="bg-[#F5F5F5]">
+    <div className="bg-[#F5F5F5] overflow-x-hidden">
         <FirstSection />
         <ImageCenter />
         <SecondSection />
