@@ -2,10 +2,9 @@ import { NextRequest } from 'next/server'
 import clientPromise from '../../../lib/mongodb'
 
 export async function GET(req: NextRequest) {
-  // req.nextUrl.pathname = '/api/project/<code>'
-  // extraer el código del path
+
   const pathname = req.nextUrl.pathname
-  const segments = pathname.split('/') // ['', 'api', 'project', 'codigo']
+  const segments = pathname.split('/') 
 
   const code = segments[segments.length - 1]
 
